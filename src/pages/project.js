@@ -28,7 +28,7 @@ const codeStyles = {
 
 // markup
 const ProjectPage = () => {
-  const [numPaintings, setNumPaintings] = useState(4)
+  // const [numPaintings, setNumPaintings] = useState(4)
   const [probTerminal, setProbTerminal] = useState(0.2)
   const [mutationProb, setMutationProb] = useState(1)
   const [maxDepth, setMaxDepth] = useState(5)
@@ -40,7 +40,7 @@ const ProjectPage = () => {
       <title>Project</title>
       <h1 style={headingStyles}>Project</h1>
       <Grid 
-        numPaintings={numPaintings}
+        // numPaintings={numPaintings}
         probTerminal={probTerminal}
         mutationProb={mutationProb}
         maxDepth={maxDepth}
@@ -48,10 +48,10 @@ const ProjectPage = () => {
         height={height}
         downsample={downsample}
       />
-      <div>
+      {/* <div>
         Number of paintings:
         <input type="number" value={numPaintings} onChange={e => setNumPaintings(e.target.value)} />
-      </div>
+      </div> */}
       <div>
         Terminal node probability:
         <input type="range" min="0" max="1" step="0.1" value={probTerminal} onChange={e => setProbTerminal(e.target.value)} />
@@ -75,7 +75,7 @@ const ProjectPage = () => {
         <input type="number" value={height} onChange={e => setHeight(e.target.value)} />
       </div>
       <div>
-        Downsample rate:
+        Upsample rate:
         <input type="number" value={downsample} onChange={e => setDownsample(e.target.value)} />
       </div>
       <Description />

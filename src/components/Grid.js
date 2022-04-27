@@ -9,7 +9,8 @@ const containerStyles = {
 
 const Grid = props => {
 
-  const { numPaintings, probTerminal, mutationProb, maxDepth, width, height, downsample } = props
+  const { probTerminal, mutationProb, maxDepth, width, height, downsample } = props
+  const numPaintings = 8
 
   const [paintings, setPaintings] = useState(generatePaintings(numPaintings, probTerminal, maxDepth));
   const [selectedPainting, setSelectedPainting] = useState(paintings[0]);
@@ -33,7 +34,9 @@ const Grid = props => {
 
   return (
     <>
+      <div>Selected painting:</div>
       <Canvas painting={selectedPainting} width={width} height={height} downsample={downsample} />
+      <div>Select a painting (just click somewhere below if you don't see anything!):</div>
       <div style={containerStyles}>{canvases}</div>
     </>
   )

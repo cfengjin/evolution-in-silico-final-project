@@ -29,7 +29,7 @@ const Canvas = props => {
         const red = evaluate(painting.genotype, { 'x': Math.trunc(x / downsample), 'y': Math.trunc(y / downsample), 'r': 255, 'g': 0, 'b': 0, 'a': 0 }) % 256
         const green = evaluate(painting.genotype, { 'x': Math.trunc(x / downsample), 'y': Math.trunc(y / downsample), 'r': 0, 'g': 255, 'b': 0, 'a': 0 }) % 256
         const blue = evaluate(painting.genotype, { 'x': Math.trunc(x / downsample), 'y': Math.trunc(y / downsample), 'r': 0, 'g': 0, 'b': 255, 'a': 0 }) % 256
-        const alpha = 128
+        const alpha = evaluate(painting.genotype, { 'x': Math.trunc(x / downsample), 'y': Math.trunc(y / downsample), 'r': 0, 'g': 0, 'b': 0, 'a': 255 }) % 256
   
         imageData.data[redIndex] = red
         imageData.data[greenIndex] = green
